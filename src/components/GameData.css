@@ -1,0 +1,39 @@
+.game-data {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.game-data ul {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.game-data nav {
+    padding: 0 30px;
+}
+
+.game-data img {
+
+    width: 60px;
+}
+
+.game-data .logo {
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* margin-right: auto; */
+}
+
+.timer-container {
+    width: 60px;
+}
+
+
+.leaderboard {
+
+    margin-right: 20px;
+}

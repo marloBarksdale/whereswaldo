@@ -1,0 +1,22 @@
+.timer {
+    /* margin: 3rem 0; */
+    width: 30px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.digits {
+
+    /* font-size: 3.5rem; */
+    padding: 10px;
+
+    min-width: 20px;
+
+}
+
+.mili-sec {
+    color: #e42a2a;
+
+}

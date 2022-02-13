@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import './App.css';
+import GameData from './components/GameData';
+import { useGame } from './hooks/useGameContext';
+import Game from './pages/Game/Game';
+import Startup from './pages/Startup/Startup';
+import Leaderboard from './pages/Leaderboard/Leaderboard';
 
 function App() {
+  const { user } = useGame();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <GameData />
+
+        <Routes>
+          <Route
+            path='/'
+            element={!user ? <Startup /> : <Navigate to='/game' />}
+          />
+          <Route path='game' element={user ? <Game /> : <Navigate to='/' />} />
+
+          <Route path='leaderboard' element={<Leaderboard />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
